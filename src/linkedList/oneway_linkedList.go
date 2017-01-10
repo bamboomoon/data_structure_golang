@@ -57,7 +57,7 @@ func (linkedList *LinkedList) CreateLinkedList(length int) error {
 }
 
 //打印链表
-func (linkedList *LinkedList) PrintLinkList() error{
+func (linkedList *LinkedList) PrintLinkList() error {
 	if linkedList.LinkedListIsEmpty() {
 		return errors.New("linkedList is empty")
 	}
@@ -69,7 +69,7 @@ func (linkedList *LinkedList) PrintLinkList() error{
 		fmt.Printf("nodeAddress:%p-node.data:%d-node.next_address:%p\n", p, p.data, p.next)
 		p = p.next
 	}
-	return  nil
+	return nil
 }
 
 //查找某个节点
@@ -92,12 +92,12 @@ func (linkedList *LinkedList) GetNode(nodeIndex int) (*linkedListNode, error) {
 }
 
 //查找某个节点的数据域
-func (linkedList *LinkedList) GetNodeData(nodeIndex int) (int,error) {
-	node, err:= linkedList.GetNode(nodeIndex)
+func (linkedList *LinkedList) GetNodeData(nodeIndex int) (int, error) {
+	node, err := linkedList.GetNode(nodeIndex)
 	if err != nil {
-		return 0,fmt.Errorf("getNodeData error: %s",err.Error())
+		return 0, fmt.Errorf("getNodeData error: %s", err.Error())
 	}
-	return node.data,nil
+	return node.data, nil
 }
 
 //插入一个节点
