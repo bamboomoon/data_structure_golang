@@ -1,8 +1,9 @@
 package main
 
 import (
-	"./linkedList"
-	"fmt"
+	//"./linkedList"
+	//"fmt"
+	"commentTeacher"
 )
 
 func main() {
@@ -20,16 +21,17 @@ func main() {
 		linkedList.RemoveNode(1) //remove one node
 		linkedList.PrintLinkList()
 		linkedList.ChangeNodeData(222, linkedList.GetLinkedListLength())
-		linkedList.PrintLinkList()*/
+		linkedList.PrintLinkList()
+	*/
 
 	//带头节点的双向链表
-	twoWayLinkedList := new(linkedList.TwoWay)
+	/*twoWayLinkedList := new(linkedList.TwoWay)
 	nodeData := []int{1, 2, 3}
 	twoWayLinkedList.InitTwoWay_linkedList(nodeData)
 	twoWayLinkedList.PrintLinkedList()
 	//插入
 	fmt.Println("插入:")
-	err := twoWayLinkedList.InsertNode(10,5)
+	err := twoWayLinkedList.InsertNode(10, 5)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -38,15 +40,18 @@ func main() {
 	fmt.Println("移除:")
 	err = twoWayLinkedList.RemoveNode(4)
 	if err != nil {
-		 fmt.Println(err)
+		fmt.Println(err)
 	}
 	twoWayLinkedList.PrintLinkedList()
 
 	//改
 	fmt.Println("改：")
-	err = twoWayLinkedList.ChangeNodeData(100,3)
-	if err != nil{
+	err = twoWayLinkedList.ChangeNodeData(100, 3)
+	if err != nil {
 		fmt.Println(err)
 	}
-	twoWayLinkedList.PrintLinkedList()
+	twoWayLinkedList.PrintLinkedList()*/
+	//锦城学院教务网 评教
+	commentTeacher.BeginComment()
+
 }

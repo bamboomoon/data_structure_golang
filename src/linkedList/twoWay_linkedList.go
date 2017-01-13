@@ -64,22 +64,22 @@ func (twoway_linkedList *TwoWay) PrintLinkedList() {
 
 //add
 //在 insertIndex 位置上插入一个节点
-func (twoway_linkedList *TwoWay) InsertNode(data, insertIndex int) error{
-	var per,ne *twoWay_node
+func (twoway_linkedList *TwoWay) InsertNode(data, insertIndex int) error {
+	var per, ne *twoWay_node
 	if insertIndex == 1 {
 		per = twoway_linkedList.headerNode
-		ne =  twoway_linkedList.headerNode.next
-	}else {
+		ne = twoway_linkedList.headerNode.next
+	} else {
 
 		//查找insertIndex 前一个节点
 		var err error
 		per, err = twoway_linkedList.FindNode(insertIndex - 1)
 		if err != nil {
-			return errors.New(fmt.Sprintf("插入失败:",err.Error()))
+			return errors.New(fmt.Sprintf("插入失败:", err.Error()))
 		}
 		ne = per.next
 	}
-	newNode := &twoWay_node{data:data,pervious:per,next:ne}
+	newNode := &twoWay_node{data: data, pervious: per, next: ne}
 	per.next = newNode
 	ne.pervious = newNode
 	twoway_linkedList.twoWay_linkedList_lenth++
@@ -87,13 +87,13 @@ func (twoway_linkedList *TwoWay) InsertNode(data, insertIndex int) error{
 }
 
 //remove
-func (twoway_linkedList *TwoWay)RemoveNode(nodeIndex int) error{
-	node,err := twoway_linkedList.FindNode(nodeIndex)
-	if err != nil{
-		return errors.New(fmt.Sprintf("remove fail:",err.Error()))
+func (twoway_linkedList *TwoWay) RemoveNode(nodeIndex int) error {
+	node, err := twoway_linkedList.FindNode(nodeIndex)
+	if err != nil {
+		return errors.New(fmt.Sprintf("remove fail:", err.Error()))
 	}
 	if nodeIndex == 1 {
-		twoway_linkedList.headerNode.next =  node.next
+		twoway_linkedList.headerNode.next = node.next
 		node.next.pervious = twoway_linkedList.headerNode
 	} else {
 		node.pervious.next = node.next
@@ -102,11 +102,12 @@ func (twoway_linkedList *TwoWay)RemoveNode(nodeIndex int) error{
 	twoway_linkedList.twoWay_linkedList_lenth--
 	return nil
 }
+
 //change
-func (twoWay_linkedList *TwoWay)ChangeNodeData(data,nodeIndex int) error{
-	node,err := twoWay_linkedList.FindNode(nodeIndex)
+func (twoWay_linkedList *TwoWay) ChangeNodeData(data, nodeIndex int) error {
+	node, err := twoWay_linkedList.FindNode(nodeIndex)
 	if err != nil {
-		return errors.New(fmt.Sprintf("change fail:",err.Error()))
+		return errors.New(fmt.Sprintf("change fail:", err.Error()))
 	}
 	node.data = data
 	return nil
@@ -127,9 +128,8 @@ func (twoway_linkedList *TwoWay) FindNode(nodeIndex int) (*twoWay_node, error) {
 		p = p.next
 		i++
 	}
-	if  i > nodeIndex {
+	if i > nodeIndex {
 		return nil, errors.New("查找失败")
 	}
 	return p, nil
 }
-
